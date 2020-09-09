@@ -1,0 +1,27 @@
+=flex ($direction: column, $justify: center, $align: center, $wrap: wrap)
+    display: flex
+    flex-flow: $direction $wrap
+    justify-content: $justify
+    align-items: $align
+
+=button ($color)
+    +flex
+    border-radius: 10px
+    width: 220px
+    height: 100%
+
+    @if $color == 'blue'
+        background-image: -webkit-linear-gradient( 90deg, rgb(0,115,195) 0%, rgb(0,131,222) 100%)
+        font-size: 18px
+    @else if $color == 'green'
+        font-size: 16px
+        background-image: -webkit-linear-gradient( 90deg, rgb(10,150,0) 0%, rgb(13,186,0) 100%)
+
+    span 
+        color: white
+        font-weight: bold
+    
+    .subSpan 
+        font-size: 12px
+        line-height: 10px
+        font-weight: 400

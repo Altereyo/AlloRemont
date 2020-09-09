@@ -1,0 +1,91 @@
+@import "mixins"
+
+$greyText: #9e9e9e
+
+footer
+    background-color: #f8f8f8
+
+.topF
+    +flex (row, space-between, $wrap: nowrap)
+    padding: 30px 0 
+
+    .makeCall a 
+        color: $greyText
+        font-size: 17px
+        font-weight: normal
+
+        &:hover 
+            text-decoration: none
+
+.midF
+    +flex (row, space-between)
+    border-top: 1px solid #e3e3e3
+    border-bottom: 1px solid #e3e3e3
+    padding: 20px 0
+
+    ul
+        +flex (column, flex-start, flex-start)
+        height: 190px
+        width: 50%
+        margin: 0
+    
+    li
+        list-style: none
+        border-bottom: 1px solid $greyText
+
+        &:hover
+            cursor: pointer
+
+        span
+            color: $greyText
+            font-weight: 600
+            font-size: 15px
+    
+    .footerModels
+        flex-direction: row
+        align-items: stretch
+
+        li
+            margin: 0 20px 10px 0
+
+    .footerServices
+        height: 190px
+        padding-left: 40px
+
+        li
+            margin-bottom: 6px
+
+.botF
+    padding: 20px 0 30px
+
+    .widgets
+        +flex (row, space-between)
+        padding: 20px 0 15px
+
+    .left
+        +flex (row, flex-start)
+
+    img
+        margin-right: 5px
+
+    .right
+        +flex (row, flex-start)
+        width: 50%
+        padding-left: 40px
+    
+    a
+        color: $greyText
+        border-bottom: 1px solid $greyText
+        font-size: 11px
+        font-weight: 600
+        letter-spacing: 1px
+        margin-right: 20px
+
+        &:hover
+            text-decoration: none
+
+    p    
+        color: $greyText
+        font-size: 11px
+        letter-spacing: 1px
+        margin-bottom: 10px

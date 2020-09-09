@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap')
+@import "mixins"
+
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+    border: none
+    font-family: "Montserrat", arial, sans-serif
+
+.container
+    margin: 0 auto
+    padding: 0
+    position: relative
+    //TODO 1 переделать для @media screen
+    width: 940px
+
+.twoBtns
+    +flex (row, space-between)
+    height: 64px
+    width: 460px
+    
+.blueBtn 
+    +button ('blue')
+
+.greenBtn
+    +button ('green')
+
+h1, h2, h3, h4, h5
+    color: #323232
+    font-weight: bold
+    margin: 0 0 11px
+
+h1 
+    color: #000
+    line-height: 37px
+
+h2
+    color: #0A0A0A
+    font-size: 34px
+
+h3
+    font-size: 30px
+
+.subtitle
+    color: #434343
+    width: 100%
+    margin: 6px 0
+    font-size: 14.3px
+    line-height: 20px
+    text-align: left
+    letter-spacing: 1px
+
+    .redp
+        color: #ec0000
+
+.colnum
+    display: block
+    margin: 0 0 25px
+    font-size: 40px
+    line-height: 40px
+    font-weight: bold
