@@ -1,82 +1,122 @@
 [
     {
         "line": "iPhone 5",
-        "model": "iPhone 5"
+        "model": "iPhone 5",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-5.png"
     },
     {
         "line": "iPhone 5",
-        "model": "iPhone 5s"
+        "model": "iPhone 5s",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-5s.png"
     },
     {
         "line": "iPhone 5",
-        "model": "iPhone 5c"
+        "model": "iPhone 5c",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-5c.png"
     },
     {
         "line": "iPhone 5",
-        "model": "iPhone SE"
+        "model": "iPhone SE",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-se.png"
     },
     {
         "line": "iPhone 6",
-        "model": "iPhone 6"
+        "model": "iPhone 6",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-6.png"
     },
     {
         "line": "iPhone 6",
-        "model": "iPhone 6 Plus"
+        "model": "iPhone 6 Plus",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-6-plus.png"
     },
     {
         "line": "iPhone 6",
-        "model": "iPhone 6s"
+        "model": "iPhone 6s",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-6s.png"
     },
     {
         "line": "iPhone 6",
-        "model": "iPhone 6s Plus"
+        "model": "iPhone 6s Plus",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-6s-plus.png"
     },
     {
         "line": "iPhone 7/8",
-        "model": "iPhone 7"
+        "model": "iPhone 7",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-7.png"
     },
     {
         "line": "iPhone 7/8",
-        "model": "iPhone 7 Plus"
+        "model": "iPhone 7 Plus",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-7-plus.png"
     },
     {
         "line": "iPhone 7/8",
-        "model": "iPhone 8"
+        "model": "iPhone 8",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-8.png"
     },
     {
         "line": "iPhone 7/8",
-        "model": "iPhone 8 Plus"
+        "model": "iPhone 8 Plus",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-8-plus.png"
     },
     {
         "line": "iPhone X",
-        "model": "iPhone X"
+        "model": "iPhone X",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-x.png"
     },
     {
         "line": "iPhone X",
-        "model": "iPhone XR"
+        "model": "iPhone XR",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-xr.png"
     },
     {
         "line": "iPhone X",
-        "model": "iPhone XS"
+        "model": "iPhone XS",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-xs.png"
     },
     {
         "line": "iPhone X",
-        "model": "iPhone XS Max"
+        "model": "iPhone XS Max",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-xs-max.png"
     },
     {
         "line": "iPhone 11",
-        "model": "iPhone 11"
+        "model": "iPhone 11",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-11.png"
     },
     {
         "line": "iPhone 11",
-        "model": "iPhone 11 Pro"
+        "model": "iPhone 11 Pro",
+        "minPrice": "890",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-11-pro-2.png"
     },
     {
         "line": "iPhone 11",
-        "model": "iPhone 11 Pro Max"
+        "model": "iPhone 11 Pro Max",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-11-pro-max.png"
     },
     {
         "line": "iPhone 11",
-        "model": "iPhone SE 2020"
+        "model": "iPhone SE 2020",
+        "minPrice": "1490",
+        "image": "https://alloremont24.ru/wp-content/uploads/2020/05/remont-iphone-se-2020.png"
     }
 ]

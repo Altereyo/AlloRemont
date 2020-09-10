@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Ремонт iPhone",
+        "id": "remont-iphone",
+        "image": "https://alloremont24.ru/img/price/display.png",
+        "description": "",
+        "minPrice": ""
+    },
+    {
+        "name": "Замена фронтальной камеры",
+        "id": "front-kamera",
+        "image": "https://alloremont24.ru/img/price/kamera.png",
+        "description": "Не работает или перестала работать передняя / селфи камера, черная, мутная, не фокусирует",
+        "minPrice": "1790"
+    },
+    {
+        "name": "Замена задней камеры",
+        "id": "back-kamera",
+        "image": "https://alloremont24.ru/img/price/kamera.png",
+        "description": "Не работает или перестала работать основная / задняя камера, черная, мутная, не фокусирует",
+        "minPrice": "1790"
+    },
+    {
+        "name": "Замена слухового динамика",
+        "id": "top-dinamik",
+        "image": "https://alloremont24.ru/img/price/dinamik.png",
+        "description": "Не работает верхний / слуховой динамик, нет звука, шумит, я не слышу собеседника",
+        "minPrice": "3690"
+    },
+    {
+        "name": "Замена полифонического динамика",
+        "id": "bot-dinamik",
+        "image": "https://alloremont24.ru/img/price/dinamik.png",
+        "description": "Не работает нижний / полифонический динамик, гудит, я не слышу музыки звонка",
+        "minPrice": "3690"
+    },
+    {
+        "name": "Замена кнопки громкости",
+        "id": "voulme-knopka",
+        "image": "https://alloremont24.ru/img/price/knopka.png",
+        "description": "Не работает верхний / слуховой динамик, нет звука, шумит, я не слышу собеседника",
+        "minPrice": "3690"
+    },
+    {
+        "name": "Замена кнопки включения",
+        "id": "on-knopka",
+        "image": "https://alloremont24.ru/img/price/knopka.png",
+        "description": "Не работает нижний / полифонический динамик, гудит, я не слышу музыки звонка",
+        "minPrice": "3690"
+    },
+    {
+        "name": "Замена кнопки HOME",
+        "id": "home-knopka",
+        "image": "https://alloremont24.ru/img/price/knopka.png",
+        "description": "Не работает верхний / слуховой динамик, нет звука, шумит, я не слышу собеседника",
+        "minPrice": "3690"
+    },
+    {
+        "name": "Замена кнопки вибро",
+        "id": "vibro-knopka",
+        "image": "https://alloremont24.ru/img/price/knopka.png",
+        "description": "Не работает нижний / полифонический динамик, гудит, я не слышу музыки звонка",
+        "minPrice": "3690"
+    }
+]

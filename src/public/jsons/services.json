@@ -1,74 +1,86 @@
 [
     {
-        "name": "Замена экрана/дисплея",
+        "name": "Замена экрана",
+        "id": "display",
         "image": "https://alloremont24.ru/img/price/display.png",
         "description": "Не горит, черный экран, пятна (потеки), полосы, не работает тачскрин (touch screen)",
-        "price": "1490"
+        "minPrice": "1490"
     },
     {
         "name": "Замена стекла",
+        "id": "steklo",
         "image": "https://alloremont24.ru/img/price/steklo.png",
         "description": "Разбито только переднее стекло, изображение оригинал, исправно и реагирует на касания / не глючит",
-        "price": "1490"
+        "minPrice": "1490"
     },
     {
-        "name": "Замена заднего стекла",
+        "name": "Замена задней крышки",
+        "id": "back-steklo",
         "image": "https://alloremont24.ru/img/price/back-steklo.png",
         "description": "Разбито заднее стекло, царапины, трещины на задней крышке, меняется только стекло        ",
-        "price": "2190"
+        "minPrice": "2190"
     },
     {
         "name": "Замена корпуса",
+        "id": "korpus",
         "image": "https://alloremont24.ru/img/price/korpus.png",
         "description": "Поцарапан, изогнут, сломан или имеет ненадлежащий внешний вид, меняется корпус в сборе",
-        "price": "2190"
+        "minPrice": "2190"
     },
     {
         "name": "Замена аккумулятора",
+        "id": "battery",
         "image": "https://alloremont24.ru/img/price/battery.png",
         "description": "Быстро разряжается батарея, вздулся АКБ, выключается, не включается, повис / висит на яблоке",
-        "price": "1290"
+        "minPrice": "1290"
     },
     {
         "name": "Замена разъёма зарядки",
+        "id": "gnezdo",
         "image": "https://alloremont24.ru/img/price/gnezdo.png",
         "description": "Не заряжается, сломано гнездо (слот) питания, не подключается к iTunes, не видит ПК",
-        "price": "1290"
+        "minPrice": "1290"
     },
     {
         "name": "Ремонт после воды",
+        "id": "water",
         "image": "https://alloremont24.ru/img/price/water.png",
         "description": "Утопил, упал в воду, просушка / чистка после попадания влаги в ультразвуковой ванночке",
-        "price": "890"
+        "minPrice": "890"
     },
     {
         "name": "Замена камеры",
+        "id": "kamera",
         "image": "https://alloremont24.ru/img/price/kamera.png",
         "description": "Не работает или перестала работать камера фронтальная или основная, черная, мутная, не фокусирует",
-        "price": "1490"
+        "minPrice": "1490"
     },
     {
         "name": "Замена динамика",
+        "id": "dinamik",
         "image": "https://alloremont24.ru/img/price/dinamik.png",
         "description": "Не работает динамик, нет звука, гудит, шумит, я не слышу собеседника, нет музыки звонка",
-        "price": "1290"
+        "minPrice": "1290"
     },
     {
         "name": "Замена микрофона",
+        "id": "mikrofon",
         "image": "https://alloremont24.ru/img/price/mikrofon.png",
         "description": "Перестал работать микрофон, меня не слышит при разговоре собеседник, не пишет звук при записи звука / видео",
-        "price": "1390"
+        "minPrice": "1390"
     },
     {
         "name": "Замена кнопок",
+        "id": "knopka",
         "image": "https://alloremont24.ru/img/price/knopka.png",
         "description": "Ремонт и замена кнопок громкости, включения, блокировки, HOME, вибрации",
-        "price": "1090"
+        "minPrice": "1090"
     },
     {
         "name": "Обмен на новый",
+        "id": "obmen",
         "image": "https://alloremont24.ru/img/price/obmen.png",
         "description": "Сдать старый, сломанный, разбитый или утопленный Айфон в обмен на новый по программе Apple Trade in",
-        "price": "4990"
+        "minPrice": "4990"
     }
 ]
