@@ -2,16 +2,24 @@
     <div class="faceBlock">
         <div class="container">
             <nav aria-label="breadcrumb">
-            <!-- TODO 3 добавить полный функционал страниц -->
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                        <li class="breadcrumb-item"><a href="">СЕРВИС</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">МОДЕЛЬ</li>
+                        <li class="breadcrumb-item">
+                            <a href="#" v-if="modelChosen || serviceChosen" @click="$parent.$parent.clearData('all')">Главная</a>
+                            <template   v-else>Главная</template>
+                        </li>
+                        <li v-if="modelChosen || serviceChosen" class="breadcrumb-item" >
+                            <a href="#" v-if="modelChosen && serviceChosen" @click="$parent.$parent.clearData('currentService')">Ремонт {{ modelChosen }}</a>
+                            <template   v-else-if="modelChosen && !serviceChosen">Ремонт {{ modelChosen }}</template>
+                            <template   v-else-if="!modelChosen && serviceChosen">{{ serviceChosen }}</template>
+                        </li>
+                        <li v-if="modelChosen && serviceChosen" class="breadcrumb-item">
+                            {{ serviceChosen }}
+                        </li>
                     </ol>
             </nav>
             <div class="mainInfo">
                 <div class="mainInfoWrapper">
-                    <h1>{{ h1 }}</h1>
+                <h1>{{ header() }}</h1>
                     <div class="mainInfoGoodsWithApple">
                         <div class="mainInfoGoodsWithoutApple">
                             <ol class="goods">
@@ -29,11 +37,11 @@
                                 </li>
                             </ol>
                             <div class="twoBtns">
-                                <button class="blueBtn" @click="model()">
-                                    <span>от {{ countPrice }} руб.</span>
+                                <button class="blueBtn">
+                                    <span>от {{ showMinPrice() }} руб.</span>
                                     <span class="subSpan">Заявка на ремонт</span>
                                 </button>
-                                <button class="greenBtn" @click="service()">
+                                <button class="greenBtn">
                                     <span>Вызвать мастера</span>
                                 </button>
                             </div>
@@ -41,7 +49,8 @@
                         <img src="https://alloremont24.ru/img/apple.png" id="mainAppleImg" alt="Apple image">
                     </div>
                 </div>
-                <img :src="mainImage" alt="Iphone picture">
+                <img v-if="modelChosen" :src="modelImage()" style="align-self: flex-end" alt="iphone model photo">
+                <img v-else src="https://alloremont24.ru/img/remont-iphone.png" alt="Iphone picture">
             </div>
         </div>
     </div>
@@ -49,28 +58,52 @@
 
 <script>
 export default {
+    props: ['modelChosen', 'serviceChosen'],
     data() {
         return {
-            h1: "Ремонт iPhone в Москве",
-            mainImage: "https://alloremont24.ru/img/remont-iphone.png"
         }
     },
     methods: {
-        model() {
-            this.$parent.$parent.isModelChosen = !this.$parent.$parent.isModelChosen
-            console.log('isModelChosen: '+this.$parent.$parent.isModelChosen)
-            console.log('isServiceChosen: '+this.$parent.$parent.isServiceChosen)
+        header() {
+            let header = ''
+
+            if (this.modelChosen && this.serviceChosen) {
+                header = this.serviceChosen +' '+ this.modelChosen
+            }
+            else if (this.modelChosen) {
+                header = 'Ремонт ' + this.modelChosen
+            }
+            else if (this.serviceChosen) {
+                header = this.serviceChosen + ' iPhone'
+            }
+            else {
+                header = 'Ремонт iPhone в Москве'
+            }
+
+            return header
         },
-        service() {
-            this.$parent.$parent.isServiceChosen = !this.$parent.$parent.isServiceChosen
-            console.log('isModelChosen: '+this.$parent.$parent.isModelChosen)
-            console.log('isServiceChosen: '+this.$parent.$parent.isServiceChosen)
+        showMinPrice() {
+            let price = null
+
+            if (this.modelChosen && this.serviceChosen) {
+                price = this.$parent.$parent.prices.find(object => object.service == this.serviceChosen).modelPrice[this.modelChosen]
+            }
+            else if (this.modelChosen && !this.serviceChosen) {
+                price = this.$parent.$parent.models.find(iphone => iphone.model == this.modelChosen).minPrice
+            }
+            else if (!this.modelChosen && this.serviceChosen) {
+                price = this.$parent.$parent.services.find(service => service.name == this.serviceChosen).minPrice
+            }
+            else {
+                price = 890
+            }
+            
+            return price
+        },
+        modelImage() {
+            let image = this.$parent.$parent.models.find(iphone => iphone.model == this.modelChosen).image                
+            return image
         }
-    },
-    computed: {
-        countPrice() {
-            return '1390'
-        }
-    },
+    }
 }
 </script>

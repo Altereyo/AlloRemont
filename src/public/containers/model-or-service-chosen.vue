@@ -1,15 +1,19 @@
 <template>
     <div>
-        <faceblock />
+        <faceblock :modelChosen="model" :serviceChosen="service" />
         <bluecall />
-        <reactivelist />
+        <reactivelist :modelChosen="model" :serviceChosen="service" />
         <howremont />
         <faq />
         <bluecall />
         <feedback />
         <examples />
-        <remontmoscow />
-        <remontmaster />
+        <remontmoscow :modelChosen="model" :serviceChosen="service" />
+        <remontmaster :modelChosen="model" :serviceChosen="service" />
+        <remonthome :modelChosen="model" :serviceChosen="service" />
+        <bluecall />
+        <fulltime :modelChosen="model" :serviceChosen="service" />
+        <corporative />
     </div>
 </template>
 
@@ -23,8 +27,12 @@ import feedback from "../components/feedback.vue";
 import examples from "../components/examples.vue";
 import remontmoscow from "../components/remont-moscow.vue";
 import remontmaster from "../components/remont-master.vue";
+import remonthome from "../components/remont-home.vue";
+import fulltime from "../components/fulltime.vue";
+import corporative from "../components/corporative.vue";
 
 export default {
+    props: ['model', 'service' ],
     components: {
         faceblock, 
         bluecall, 
@@ -34,7 +42,10 @@ export default {
         feedback, 
         examples, 
         remontmoscow,
-        remontmaster
+        remontmaster,
+        remonthome,
+        fulltime,
+        corporative
     }
 }
 </script>

@@ -35,6 +35,7 @@ import faq from "../components/faq.vue";
 import howremont from "../components/how-remont.vue";
 import corporative from "../components/corporative.vue";
 
+// TODO 3 во всех элементах убрать пустые теги script
 export default {
     components: {
         faceblock, 

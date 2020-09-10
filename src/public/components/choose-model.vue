@@ -11,7 +11,7 @@
                     <h3>{{ header }}</h3>
                     <ul>
                         <li v-for="item in sortByLine(header)" :key="item.model">
-                            <span>{{ item.model }}</span>
+                            <span @click="$parent.$parent.changePage(item.model, 'model')">{{ item.model }}</span>
                         </li>
                     </ul>
                 </div>

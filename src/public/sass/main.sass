@@ -5,7 +5,7 @@ $greyBgColor: #f2f2f2
 
 .faceBlock
     background-color: #f8f8f8
-    padding: 130px 0 40px
+    padding-top: 130px
 
     .breadcrumb 
         background-color: transparent
@@ -26,10 +26,12 @@ $greyBgColor: #f2f2f2
 
         &Wrapper
             display: inline-block
+            max-width: 580px
+            padding-right: 20px
+            margin-bottom: 40px
 
         &GoodsWithApple
             +flex (row, $align: flex-start)
-            margin-top: 40px
 
         &GoodsWithoutApple
             +flex ($align: stretch)
