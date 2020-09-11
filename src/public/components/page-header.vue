@@ -32,32 +32,8 @@
                         </ul>
                     </div>
                 </div>
-                <button><p>Заказать обратный звонок</p></button>
+                <button data-toggle="modal" data-target="#modalWindow" @click="$parent.changeModalHeader('zvonok')"><p>Заказать обратный звонок</p></button>
             </div>
         </div>
     </header>
 </template>
-
-<script>
-
-export default {
-    methods: {
-        // handleUl (action) {
-        //     switch (action) {
-        //         case 'hideModels':
-        //             this.$refs.modelsUl.style.display = 'none'
-        //             break
-        //         case 'hideServices':
-        //             this.$refs.servicesUl.style.display = 'none'
-        //             break
-        //         case 'showModels':
-        //             this.$refs.modelsUl.style.display = 'flex'
-        //             break
-        //         case 'showServices':
-        //             this.$refs.servicesUl.style.display = 'flex'
-        //             break
-        //     }
-        // }
-    },
-}
-</script>

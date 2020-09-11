@@ -37,11 +37,11 @@
                                 </li>
                             </ol>
                             <div class="twoBtns">
-                                <button class="blueBtn">
+                                <button class="blueBtn" data-toggle="modal" data-target="#modalWindow" @click="$parent.$parent.changeModalHeader('zayavka')">
                                     <span>от {{ showMinPrice() }} руб.</span>
                                     <span class="subSpan">Заявка на ремонт</span>
                                 </button>
-                                <button class="greenBtn">
+                                <button class="greenBtn" data-toggle="modal" data-target="#modalWindow" @click="$parent.$parent.changeModalHeader('master')">
                                     <span>Вызвать мастера</span>
                                 </button>
                             </div>

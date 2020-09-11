@@ -21,7 +21,3 @@ export default {
     props: ['modelChosen', 'serviceChosen'],
 }
 </script>
-
-<style>
-
-</style>

@@ -2,6 +2,7 @@
     <div>
         <pageheader />
         <main>
+            <modal :modalHeader="modalHeader" :modalButton="modalButton" />
             <indexpage v-if="isModelChosen == false && isServiceChosen == false"/>
             <reducedpage v-else-if="isModelChosen == true || isServiceChosen == true" :model="modelChosen" :service="serviceChosen" />
         </main>
@@ -10,18 +11,22 @@
 </template>
 
 <script>
-// TODO 1 сделать один компонент modal, в котором будут завязаны разные template v-if в зависимости от :type="", как в учебном примере
+// TODO 1 доделать modal window
 
 import pageheader from "./components/page-header.vue";
+import modal from "./components/modal.vue"
 import indexpage from "./containers/index-page.vue";
 import reducedpage from "./containers/model-or-service-chosen.vue";
 import pagefooter from "./components/page-footer.vue"
 
 export default {
-    components: { pageheader, indexpage, reducedpage, pagefooter },
+    components: { pageheader, modal, indexpage, reducedpage, pagefooter },
 
     data() {
         return {
+            modalHeader: '',
+            modalButton: '',
+
             models: [],
             modelsApi: "./src/public/jsons/models.json",
             isModelChosen: false,
@@ -37,6 +42,22 @@ export default {
         };
     },
     methods: {
+        changeModalHeader(header) {
+            switch (header) {
+                case 'zayavka':
+                    this.modalHeader = 'Заявка на ремонт'
+                    this.modalButton = 'Отправить заявку'
+                    break
+                case 'master':
+                    this.modalHeader = 'Вызов мастера'
+                    this.modalButton = 'Вызов мастера'
+                    break
+                case 'zvonok':
+                    this.modalHeader = 'Обратный звонок'
+                    this.modalButton = 'Заказать звонок'
+                    break
+            }
+        },
         changePage(name, type) {
             switch (type) {
                 case 'model':

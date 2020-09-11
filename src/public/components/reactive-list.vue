@@ -65,14 +65,14 @@ export default {
         showHeader() {
             let header = ''
 
-            if ((this.modelChosen && this.serviceChosen) || this.serviceChosen) {
+            if (this.modelChosen && this.serviceChosen) {
                 let serviceWords = this.serviceChosen.split(' ')
                 if (serviceWords[0] == 'Замена') {
                     serviceWords[0] = 'замены'
-                    header = 'Цена '+ serviceWords.join(' ') +' '+ this.modelChosen +'в Москве'
+                    header = 'Цена '+ serviceWords.join(' ') +' '+ this.modelChosen +' в Москве'
                 }
                 else if (serviceWords[0] == 'Ремонт') {
-                    header = 'Ремонт утопленного '+ this.modelChosen +'в Москве'
+                    header = 'Ремонт утопленного '+ this.modelChosen +' в Москве'
                 }
                 else if (serviceWords[0] == 'Обмен') {
                     header = 'Обмен '+ this.modelChosen +' на новый в Москве'
@@ -82,21 +82,20 @@ export default {
             else if (this.modelChosen) {
                 header = 'Цены на ремонт '+ this.modelChosen +' в Москве'
             }
-            // else if (this.serviceChosen) {
-            //     let serviceWords = this.serviceChosen.split(' ')
-            //     if (serviceWords[0] == 'Замена') {
-            //         serviceWords[0] = 'замены'
-            //         header = 'Цена '+ serviceWords.join(' ') +' '+ this.modelChosen
-            //     }
-            //     else if (serviceWords[0] == 'Ремонт') {
-            //         serviceWords = serviceWords.splice(1, 2, 'утопленного')
-            //         header = serviceWords.join(' ') +' '+ this.modelChosen
-            //     }
-            //     else if (serviceWords[0] == 'Обмен') {
-            //         header = 'Обмен '+ this.modelChosen +' на новый в Москве'
-            //     }
+            else if (this.serviceChosen) {
+                let serviceWords = this.serviceChosen.split(' ')
+                if (serviceWords[0] == 'Замена') {
+                    serviceWords[0] = 'замены'
+                    header = 'Цена '+ serviceWords.join(' ') +' iPhone в Москве'
+                }
+                else if (serviceWords[0] == 'Ремонт') {
+                    header = 'Ремонт утопленного iPhone в Москве'
+                }
+                else if (serviceWords[0] == 'Обмен') {
+                    header = 'Обмен iPhone на новый в Москве'
+                }
 
-            // }
+            }
             else {
                 header = 'Цены на ремонт iPhone'
             }
