@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// TODO 1 доделать modal window
 
 import pageheader from "./components/page-header.vue";
 import modal from "./components/modal.vue"

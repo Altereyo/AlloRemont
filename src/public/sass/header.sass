@@ -1,22 +1,146 @@
+@import "mixins"
+
 header 
-    position: fixed
     width: 100%
+    position: relative
     z-index: 1
 
-.topHeader 
-    background-image: linear-gradient(90deg, rgb(60,60,60) 0%, rgb(69,69,69) 100%)
+#fullScreen
+    z-index: 1
+    @media (max-width: 976px)
+        display: none
+    .topHeader 
+        background-image: linear-gradient(90deg, rgb(60,60,60) 0%, rgb(69,69,69) 100%)
 
-    .container 
-        padding: 18px 0 13px
+        .container 
+            padding-top: 18px
+            padding-bottom: 13px
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+            .logo 
+                margin-top: -5px
+
+            .makeCall a 
+                color: #fff
+                font-size: 17px
+                font-weight: normal
+
+                &:hover 
+                    text-decoration: none
+                
+                strong 
+                    font-weight: bolder
+
+    .botHeader 
+        position: relative
+        background-image: linear-gradient(90deg, rgb(248,248,248) 0%, rgb(255,255,255) 100%)
+        box-shadow: 0px 5px 30px 0px rgba(0, 1, 0, 0.15)
+
+        .container
+            height: 52px
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+            .botHeaderLists 
+                display: flex
+                flex-direction: row
+
+                .chooseService 
+                    border-right: 1px solid #bcbcbc
+                
+                .botHeaderList 
+                    padding: 15px 15px
+                    border-left: 1px solid #bcbcbc
+                    
+                    &:hover > ul
+                        display: flex
+                        box-shadow: 0px 5px 30px 0px rgba(0, 1, 0, 0.15)
+                    
+                    p 
+                        margin: auto 0
+                        font-size: 15px
+
+                        &:after 
+                            content: url('https://alloremont24.ru/img/menu-arrow.png')
+                            margin-left: 10px
+                        
+                    
+                    ul 
+                        margin-block-start: 0
+                        margin-block-end: 0
+                        padding-inline-start: 0
+                        
+                        display: none
+                        flex-flow: column wrap
+                        align-items: flex-start
+                        justify-content: flex-start
+
+                        height: 160px
+                        width: calc(100% - 2px)
+                        position: absolute
+                        top: 52px
+                        left: 1px
+                        padding-right: 225px
+                        background: rgb(248,248,248)
+
+                        &:after 
+                            content: url('https://alloremont24.ru/img/apple.png')
+                            position: absolute
+                            right: 60px
+                            top: 22px
+                        
+                        li 
+                            list-style: none
+                            padding: 11px 0 2px 28px
+
+                            a 
+                                color: #484848
+                                font-weight: 600
+                                border-bottom: 1px solid #484848
+                                text-decoration: none
+                                font-size: 15px
+                                line-height: 14px
+
+            button 
+                background-color: white
+                border: 0
+
+                p 
+                    border-bottom: 1px solid #000
+                    font-weight: bold
+                    font-size: 12px
+                    color: #000
+                    margin: 0
+
+#phoneScreen
+    +flex (row, space-between, $wrap: nowrap)
+    display: none
+    position: fixed
+    width: 100%
+    z-index: 10
+    background-image: -webkit-linear-gradient( 90deg, rgb(60,60,60) 0%, rgb(69,69,69) 100%)
+
+    @media (max-width: 976px)
         display: flex
-        flex-direction: row
-        justify-content: space-between
 
-        .logo 
-            margin-top: -5px
+    div
+        text-align: center
 
-        .makeCall a 
-            color: #fff
+    .logo, .openMenu
+        height: 54px
+        width: 60px
+        padding: 13px
+
+    .logo
+        border-right: 1px solid #313131
+
+    .makeCall
+        width: auto
+        a 
+            color: #dbdbdb
             font-size: 17px
             font-weight: normal
 
@@ -25,84 +149,43 @@ header
             
             strong 
                 font-weight: bolder
+    
+    .openMenu
+        background-color: transparent
+        border-left: 1px solid #313131
+        background-image: url(https://alloremont24.ru/img/menu.png)
+        background-size: 19px
+        background-position: center
+        background-repeat: no-repeat
 
-.botHeader 
-    background-image: linear-gradient(90deg, rgb(248,248,248) 0%, rgb(255,255,255) 100%)
-    box-shadow: 0px 5px 30px 0px rgba(0, 1, 0, 0.15)
+.menu
+    position: fixed
+    overflow: hidden
+    width: 230px
+    top: 54px
+    right: 0px
+    transition: .4s ease
+    margin-top: -150px
+    background-image: -webkit-linear-gradient(90deg, #3c3c3c 0%, #454545 100%)
+    border-bottom-left-radius: 5px
+    padding: 10px
 
-    .container
-        height: 52px
-        display: flex
-        flex-direction: row
-        justify-content: space-between
+    &-header
+        color: #dbdbdb
+        font-size: 18px
+        font-weight: 500
+        background-color: transparent
+    hr
+        margin: 0
+        background-color: darken(#dbdbdb, 40%)
 
-        .botHeaderLists 
-            display: flex
-            flex-direction: row
+    li
+        color: #dbdbdb
+        font-size: 14px
+        padding-left: 10px
 
-            .chooseService 
-                border-right: 1px solid #bcbcbc
-            
-            .botHeaderList 
-                padding: 15px 15px
-                border-left: 1px solid #bcbcbc
-                
-                &:hover > ul
-                    display: flex
-                    box-shadow: 0px 5px 30px 0px rgba(0, 1, 0, 0.15)
-                
-                p 
-                    margin: auto 0
-                    font-size: 15px
+        &:hover 
+            cursor: pointer
 
-                    &:after 
-                        content: url('https://alloremont24.ru/img/menu-arrow.png')
-                        margin-left: 10px
-                    
-                
-                ul 
-                    margin-block-start: 0
-                    margin-block-end: 0
-                    padding-inline-start: 0
-                    
-                    display: none
-                    flex-flow: column wrap
-                    align-items: flex-start
-                    justify-content: flex-start
-
-                    height: 160px
-                    width: calc(100% - 2px)
-                    position: absolute
-                    top: 52px
-                    left: 1px
-                    padding-right: 225px
-                    background: rgb(248,248,248)
-
-                    &:after 
-                        content: url('https://alloremont24.ru/img/apple.png')
-                        position: absolute
-                        right: 60px
-                        top: 22px
-                    
-                    li 
-                        list-style: none
-                        padding: 11px 0 2px 28px
-
-                        a 
-                            color: #484848
-                            font-weight: 600
-                            border-bottom: 1px solid #484848
-                            text-decoration: none
-                            font-size: 15px
-                            line-height: 14px
-
-        button 
-            background-color: white
-            border: 0
-
-            p 
-                border-bottom: 1px solid #000
-                font-weight: bold
-                font-size: 12px
-                color: #000
-                margin: 0
+            span
+                border-bottom: 1px solid #dbdbdb

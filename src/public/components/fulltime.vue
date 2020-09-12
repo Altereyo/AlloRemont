@@ -7,11 +7,13 @@
                 по ремонту и замене экрана, стекла, корпуса, батарейки, динамика, микрофона, камеры, кнопок, разъемов и шлейфов.
                 </p>
             <p>Круглосуточная диагностика всех устройств Apple iPhone 24 на 7 и ремонт:</p>
-            <ul>
-                <li v-for="item in $parent.$parent.models" :key="item.model">
-                    <span>{{ item.model }}</span>
-                </li>
-            </ul>
+            <div class="lines">
+                <ul v-for="line in headers" :key="line">
+                    <li v-for="item in sortByLine(line)" @click="$parent.$parent.changePage(item.model, 'model')" :key="item.model">
+                        <span>{{ item.model }}</span>
+                    </li>
+                </ul>
+            </div>
             <p>Срочный ремонт 24 часа. Запчасти на все Айфоны в наличии, <a href="tel:+79067263924">звоните!</a></p>
             <div class="twoBtns">
                 <button class="blueBtn">
@@ -28,5 +30,19 @@
 <script>
 export default {
     props: ['modelChosen', 'serviceChosen'],
+    data() {
+        return {
+            headers: ['iPhone 11', 'iPhone X', 'iPhone 7/8', 'iPhone 6', 'iPhone 5']
+        }
+    },
+    methods: {
+        sortByLine(linee) {
+            return this.$parent.$parent.models.filter(model => {
+                if (model.line == linee) {
+                    return model
+                }
+            })
+        }
+    },
 }
 </script>

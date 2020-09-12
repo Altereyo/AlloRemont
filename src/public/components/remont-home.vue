@@ -6,7 +6,7 @@
                 Легко, сразу при Вас выполним ремонт или заменим:
             </p>
             <ul>
-                <li v-for="item in $parent.$parent.services" :key="item.name">
+                <li v-for="item in $parent.$parent.services" @click="$parent.$parent.changePage(item.name, 'service')" :key="item.name">
                     <img :src="item.image" :alt="item.name">
                     <span>{{ item.name }}</span>
                 </li>
@@ -20,6 +20,6 @@
 
 <script>
 export default {
-    props: ['modelChosen', 'serviceChosen'],
+    props: ['modelChosen', 'serviceChosen']
 }
 </script>

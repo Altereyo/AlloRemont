@@ -49,8 +49,10 @@
                         <img src="https://alloremont24.ru/img/apple.png" id="mainAppleImg" alt="Apple image">
                     </div>
                 </div>
-                <img v-if="modelChosen" :src="modelImage()" style="align-self: flex-end" alt="iphone model photo">
-                <img v-else src="https://alloremont24.ru/img/remont-iphone.png" alt="Iphone picture">
+                <div id="mainImg">
+                    <img v-if="modelChosen" :src="modelImage()" style="align-self: flex-end" alt="iphone model photo">
+                    <img v-else src="https://alloremont24.ru/img/remont-iphone.png" alt="Iphone picture">
+                </div>
             </div>
         </div>
     </div>

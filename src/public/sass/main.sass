@@ -2,9 +2,16 @@
 
 $greyBgColor: #f2f2f2
 
+.clearfix
+    height: 54px
+    display: none
+
+    @media (max-width: 976px)
+        display: block
+
 .faceBlock
     background-color: #f8f8f8
-    padding-top: 130px
+    padding-top: 15px
 
     .breadcrumb 
         background-color: transparent
@@ -20,21 +27,41 @@ $greyBgColor: #f2f2f2
             letter-spacing: normal
 
     .mainInfo 
-        +flex (row,space-between, flex-start)
+        +flex (row,space-between, center, nowrap)
         margin-top: 20px
 
+        @media (max-width: 768px)
+            justify-content: center
+            flex-wrap: wrap
+
         &Wrapper
-            display: inline-block
+            +flex (column, flex-start, flex-start)
             max-width: 580px
             padding-right: 20px
             margin-bottom: 40px
 
+            @media (max-width: 768px)
+                padding-right: 0
+                margin-bottom: 25px
+
         &GoodsWithApple
             +flex (row, $align: flex-start)
 
+        #mainAppleImg
+            @media (max-width: 976px)
+                display: none
+
         &GoodsWithoutApple
             +flex ($align: stretch)
-            width: 460px
+            
+
+        #mainImg
+            @media (max-width: 768px)
+                height: 200px
+                overflow: hidden
+
+        img
+            max-width: 100%
 
         .blueBtn
             padding-bottom: 5px
@@ -42,6 +69,10 @@ $greyBgColor: #f2f2f2
         .goods
             +flex($justify: space-between, $align: flex-start)
             height: 150px
+
+            @media (max-width: 576px)
+                flex-direction: column
+                height: auto
 
 
             li
@@ -52,6 +83,10 @@ $greyBgColor: #f2f2f2
                 line-height: 23px
                 list-style-type: none
                 margin: 0 50px 30px 0
+
+                @media (max-width: 576px)
+                    width: auto
+                    margin: 0 0 10px
 
                 p
                     margin: 0
@@ -73,18 +108,28 @@ $greyBgColor: #f2f2f2
 .chooseModelBlock
     padding: 25px 0 15px
 
+    @media (max-width: 576px)
+        padding: 25px 0 5px
+
     .modelsList
-        +flex (row, space-between)
+        +flex (row, space-between, $wrap: wrap)
         padding: 20px 0 10px
+        margin-left: -10px
+
+        @media (max-width: 726px)
+            justify-content: flex-start
+            flex-wrap: wrap
+
     
     .line
-        padding: 20px 0 10px
-        width: 160px
+        padding: 20px 10px 10px
     
     h3
         margin-bottom: 14px
         font-size: 24px
         color: #2d2d2d
+        @media (max-width: 768px)
+            font-size: 22px
 
     li
         color: #484848
@@ -97,16 +142,22 @@ $greyBgColor: #f2f2f2
         &:hover
             cursor: pointer
 
+        @media (max-width: 768px)
+            font-size: 15px
+
     span
         border-bottom: 1px solid #484848
-
+  
 .blueCallBlock
     background: #4788b5
     color: #fff
     padding: 17px 0 15px
 
     .container
-        +flex (row, space-between)
+        +flex (row, space-between, $wrap: nowrap)
+
+        @media (max-width: 877px)
+            flex-direction: column
 
     p
         margin: 0
@@ -125,19 +176,32 @@ $greyBgColor: #f2f2f2
 
         &:hover
             text-decoration: none
-
+        @media (max-width: 877px)
+            margin-top: 10px
+    
 .reactiveServices
     padding: 25px 0
+
+    @media (max-width: 576px)
+        padding: 25px 0 15px
 
     ul
         margin: 20px 0
 
     li
-        +flex (row, space-between)
+        +flex (row, flex-end, $wrap: nowrap)
         border: 1px solid #e2e2e2
         padding: 15px 20px
         list-style: none
         transition: .3s
+
+        @media (max-width: 576px)
+            position: relative
+            justify-content: flex-start
+            flex-wrap: wrap
+
+        div
+            margin-right: auto
 
         &:nth-child(2n)
             background: #f5f5f5
@@ -156,7 +220,7 @@ $greyBgColor: #f2f2f2
                 text-decoration: none
 
         p
-            width: 700px
+            max-width: 700px
             color: #484848
             font-weight: normal
             margin-top: 9px
@@ -165,32 +229,51 @@ $greyBgColor: #f2f2f2
             line-height: 19px
             letter-spacing: 1px
 
-        // img
-        //     margin-left: 5%
+        img
+            margin: 0 15px
+            @media (max-width: 576px)
+                position: absolute
+                top: 15px
+                right: 15px
+                margin: 0
 
         .blueBtn
             width: 120px
+            height: 47px
             padding: 14px 0
             background-color: rgb(0, 116, 197)
             font-size: 14px
             line-height: 20px
+            flex-shrink: 0
 
 .howRemont
     background-color: $greyBgColor
     padding: 40px 0
 
+    @media (max-width: 576px)
+        padding: 30px 0
+
     .steps
-        +flex (row, space-between)
+        +flex (row, space-between, flex-start, nowrap)
         padding-top: 15px
+
+        @media (max-width: 770px)
+            flex-wrap: wrap
+            max-width: 500px
+            margin: 0 auto
 
         div
             position: relative
+            margin: 10px
             
             &:not(:first-child):before
                 content: url(https://alloremont24.ru/img/level.png)
                 position: absolute
                 top: 6px
-                left: -70px
+                left: -35%
+            
+                @media (max-width: 976px)
+                    display: none
 
         span
             color: #0082db
@@ -211,7 +294,10 @@ $greyBgColor: #f2f2f2
             letter-spacing: 1px
 
 .faq
-    padding: 40px 20px
+    padding: 40px 0
+
+    @media (max-width: 576px)
+        padding: 30px 0 10px
 
     .subtitle
         margin-bottom: 30px
@@ -226,7 +312,7 @@ $greyBgColor: #f2f2f2
 
 
     button
-        padding: 15px 30px
+        padding: 15px 50px 15px 30px
         background-color: #fff
         outline: none
         position: relative
@@ -241,66 +327,105 @@ $greyBgColor: #f2f2f2
 
         &:not([aria-expanded="false"])::after
             transform: rotate(136deg)
-            
+         
 .feedback
     padding: 40px 0
 
+    @media (max-width: 576px)
+        padding: 30px 0
+
     .comments
-        +flex (row, space-between, $wrap: nowrap)
+        +flex (row, space-between, flex-start, nowrap)
         padding: 15px 0 50px
 
+        @media (max-width: 576px)
+            flex-direction: column
+            align-items: center
+            padding-bottom: 25px
+
         div
-            height: 200px
+            +flex (column)
             width: 30%
+
+            @media (max-width: 576px)
+                width: 60%
+                margin-bottom: 15px
 
         .colnum
             color: #0caa00
+            align-self: flex-start
+
+            @media (max-width: 576px)
+                margin-bottom: 10px
 
         p
-            height: 90px
             margin-bottom: 20px
             line-height: 23px
             font-size: 15px
             letter-spacing: 1px
+
+            @media (max-width: 576px)
+                margin-bottom: 15px
+                
         
         .author
             font-size: 14px
+            align-self: flex-end
     
     button
         +button('green')
         margin: 0 auto
         height: 55px
 
+        @media (max-width: 576px)
+            width: 290px
+
 .examples
     background-color: $greyBgColor
     padding: 40px 0 10px
 
-    .pics
-        +flex (row, space-between)
-        margin: 30px 0 20px
-    
-    img
-        height: 230px
-        width: 230px
+    @media (max-width: 576px)
+        padding: 30px 0 0
+
+    .container
+        .pics
+            +flex (row, space-between, start, $wrap: nowrap)
+            margin: 30px 0 20px
+
+            @media (max-width: 700px)
+                flex-wrap: wrap
+
+        img
+            width: calc(25% - 5px)
+
+            @media (max-width: 700px)
+                width: calc(50% - 5px)
+                margin-bottom: 10px
 
 .remontMoscow
     padding: 40px 0
+
+    @media (max-width: 576px)
+        padding: 30px 0 20px
 
     p
         font-size: 15px
         line-height: 30px
         margin-bottom: 30px
         letter-spacing: 1px
-    
-    .twoBtns
-        width: 460px
 
 .remontMaster
     background-color: $greyBgColor
     padding: 40px 0 10px
+
+    @media (max-width: 576px)
+        padding: 30px 0 10px
     
     .container
-        +flex (row)
+        +flex (row, $wrap: nowrap)
+
+        @media (max-width: 768px)
+            flex-wrap: wrap
 
         div
             max-width: 690px
@@ -317,6 +442,9 @@ $greyBgColor: #f2f2f2
 .remontHome
     padding: 40px 0 0
 
+    @media (max-width: 576px)
+        padding: 30px 0 0
+
     p
         font-size: 15px
         margin-bottom: 30px
@@ -327,6 +455,12 @@ $greyBgColor: #f2f2f2
         +flex (column, flex-start, flex-start)
         height: 190px
         margin: 0
+
+        @media (max-width: 768px)
+            height: 250px
+        
+        @media (max-width: 576px)
+            height: auto
 
     li
         +flex (row, flex-start)
@@ -343,19 +477,31 @@ $greyBgColor: #f2f2f2
         font-size: 17px
         margin: 0 5px
 
+        @media (max-width: 992px)
+            font-size: 15px
+            letter-spacing: 1px
+
 .fulltime
     padding: 40px 0 10px
     background-color: $greyBgColor
+
+    @media (max-width: 576px)
+        padding: 30px 0 15px
     
     p
         font-size: 15px
         letter-spacing: 1px
         line-height: 30px
 
+    .lines
+        +flex (row, flex-start, flex-start, wrap)
+        margin: 30px 0 0 -10px
+
+        @media (max-width: 700px)
+            justify-content: flex-start
+
     ul
-        +flex (column, flex-start, flex-start)
-        height: 160px
-        margin-top: 30px
+        padding: 0 15px
     
     li
         list-style: none
@@ -369,19 +515,30 @@ $greyBgColor: #f2f2f2
             border-bottom: 1px solid #484848
             font-weight: 600
             font-size: 17px
+
+            @media (max-width: 992px)
+                font-size: 15px
+                letter-spacing: 1px
     
     .twoBtns
-        margin: 20px 0
+        margin: 25px auto
+        
+        @media (max-width: 576px)
+            margin: 0 auto
 
 .alloRemont
     background-color: $greyBgColor
     padding: 40px 0 10px
+
+    @media (max-width: 576px)
+        padding: 30px 0 10px
     
     .container
         +flex (row, space-between)
 
     .text
         display: inline-block
+        align-self: flex-start
         width: 690px
 
     p
@@ -389,27 +546,48 @@ $greyBgColor: #f2f2f2
         letter-spacing: 1px
         line-height: 30px
 
+    img
+        @media (max-width: 958px)
+            width: 20%
+        @media (max-width: 910px)
+            display: none
+
 .corporative
     padding: 40px 0
 
+    @media (max-width: 576px)
+        padding: 30px 0 20px
+
     .container
-        +flex (row, space-between)
+        +flex (row, flex-start, $wrap: nowrap)
+
+        @media (max-width: 770px)
+            flex-wrap: wrap
 
     .text
         max-width: 690px
 
     p
+        max-width: 690px
         font-size: 15px
         letter-spacing: 1px
         line-height: 30px
         margin-bottom: 30px
+    
+    img
+        width: 25%
+        max-width: 100%
+
+        @media (max-width: 770px)
+            margin: 20px auto
+            width: auto
 
 
 #modalWindow
     padding: 0!important
 
 .modalnew a[href="#close"]:after
-    z-index: 2
+    z-index: 999
 
 .modal
     &-content
@@ -531,6 +709,7 @@ $greyBgColor: #f2f2f2
 
             button
                 height: 60px
+                width: 280px
 
     &-bot
         border-bottom-left-radius: 10px
@@ -544,11 +723,9 @@ $greyBgColor: #f2f2f2
             font-weight: 600
         
         a
-            width: 100%
-            margin: 15px 20px 0
+            margin-top: 15px
 
-        .blueCall
-            flex-direction: column
-        
         .container
+            position: relative
+            flex-direction: column
             width: 100%

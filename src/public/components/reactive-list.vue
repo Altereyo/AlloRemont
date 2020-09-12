@@ -9,41 +9,41 @@
                 <template v-if="modelChosen && serviceChosen">
                     <li v-for="service in showLi()" :key="service.name">
                         <div>
-                            <a href="#">{{ service.name }}</a>
+                            <a href="#" data-toggle="modal" data-target="#modalWindow" @click="$parent.$parent.changeModalHeader('zayavka')">{{ service.name }}</a>
                             <p>{{ service.description }}</p>
                         </div>
                         <img :src="service.image" alt="">
-                        <button class="blueBtn"><span>от {{ showPrice(service) }} р.</span></button>
+                        <button class="blueBtn" data-toggle="modal" data-target="#modalWindow" @click="$parent.$parent.changeModalHeader('zayavka')"><span>от {{ showPrice(service) }} р.</span></button>
                     </li>
                 </template>
                 <template v-else-if="modelChosen">
                     <li v-for="service in $parent.$parent.services" :key="service.name">
                         <div>
-                            <a href="#">{{ service.name }}</a>
+                            <a href="#" @click="$parent.$parent.changePage(service.name, 'service')">{{ service.name }}</a>
                             <p>{{ service.description }}</p>
                         </div>
                         <img :src="service.image" alt="service image">
-                        <button class="blueBtn"><span>от {{ showPrice(service.name) }} р.</span></button>
+                        <button class="blueBtn" @click="$parent.$parent.changePage(service.name, 'service')"><span>от {{ showPrice(service.name) }} р.</span></button>
                     </li>
                 </template>
                 <template v-else-if="serviceChosen">
                     <li v-for="iphone in $parent.$parent.models" :key="iphone.name">
                         <div>
-                            <a href="#">{{ iphone.model }}</a>
+                            <a href="#" @click="$parent.$parent.changePage(iphone.model, 'model')">{{ iphone.model }}</a>
                             <p>{{ $parent.$parent.services.find(service => service.name == serviceChosen).description }}</p>
                         </div>
                         <img :src="$parent.$parent.services.find(service => service.name == serviceChosen).image" alt="service image">
-                        <button class="blueBtn"><span>от {{ showPrice(iphone.model) }} р.</span></button>
+                        <button class="blueBtn" @click="$parent.$parent.changePage(iphone.model, 'model')"><span>от {{ showPrice(iphone.model) }} р.</span></button>
                     </li>
                 </template>
                 <template v-else>
                     <li v-for="service in $parent.$parent.services" :key="service.name">
                         <div>
-                            <a href="#">{{ service.name }}</a>
+                            <a href="#" @click="$parent.$parent.changePage(service.name, 'service')">{{ service.name }}</a>
                             <p>{{ service.description }}</p>
                         </div>
                         <img :src="service.image" alt="service image">
-                        <button class="blueBtn"><span>от {{ service.minPrice }} р.</span></button>
+                        <button class="blueBtn" @click="$parent.$parent.changePage(service.name, 'service')"><span>от {{ service.minPrice }} р.</span></button>
                     </li>
                 </template>
             </ul>

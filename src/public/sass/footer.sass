@@ -9,10 +9,17 @@ footer
     +flex (row, space-between, $wrap: nowrap)
     padding: 30px 0 
 
+    @media (max-width: 576px)
+        justify-content: center
+        padding: 10px 0
+    
     .makeCall a 
         color: $greyText
         font-size: 17px
         font-weight: normal
+
+        @media (max-width: 576px)
+            display: none
 
         &:hover 
             text-decoration: none
@@ -28,6 +35,10 @@ footer
         height: 190px
         width: 50%
         margin: 0
+
+        @media (max-width: 885px)
+            width: 100%
+            border-bottom: 1px solid #e3e3e3
     
     li
         list-style: none
@@ -45,12 +56,24 @@ footer
         flex-direction: row
         align-items: stretch
 
+        @media (max-width: 885px)
+            padding: 0 0 10px
+            height: auto
+
         li
             margin: 0 20px 10px 0
 
     .footerServices
         height: 190px
         padding-left: 40px
+
+        @media (max-width: 885px)
+            padding: 10px 0 0
+            border-bottom: none
+            font-size: 13px
+
+        @media (max-width: 412px)
+            height: 365px
 
         li
             margin-bottom: 6px
@@ -59,30 +82,39 @@ footer
     padding: 20px 0 30px
 
     .widgets
-        +flex (row, space-between)
+        +flex (row, space-between, $wrap: nowrap)
         padding: 20px 0 15px
 
     .left
-        +flex (row, flex-start)
+        +flex (row, flex-start, $wrap: nowrap)
 
     img
         margin-right: 5px
 
     .right
         +flex (row, flex-start)
-        width: 50%
-        padding-left: 40px
+
+        @media (max-width: 768px)
+            padding-left: 40px
+
+        @media (max-width: 412px)
+            padding-left: 5px
     
     a
         color: $greyText
-        border-bottom: 1px solid $greyText
         font-size: 11px
         font-weight: 600
         letter-spacing: 1px
         margin-right: 20px
 
+        span
+            border-bottom: 1px solid $greyText
+
         &:hover
             text-decoration: none
+        
+        @media (max-width: 810px)
+            margin: 5px 20px 0
 
     p    
         color: $greyText
