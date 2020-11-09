@@ -57,7 +57,7 @@ export default {
     props: ['modelChosen', 'serviceChosen'],
     data() {
         return {
-            hiddenServicesApi: "./src/public/jsons/hidden-services.json",
+            hiddenServicesApi: "./src/public/db/hidden-services.json",
             hiddenServices: []
         }
     },
@@ -202,7 +202,3 @@ export default {
     },
 }
 </script>
-
-<style>
-
-</style>

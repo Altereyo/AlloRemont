@@ -27,17 +27,17 @@ export default {
             modalButton: '',
 
             models: [],
-            modelsApi: "./src/public/jsons/models.json",
+            modelsApi: "./src/public/db/models.json",
             isModelChosen: false,
             modelChosen: '',
 
             services: [],
-            servicesApi: "./src/public/jsons/services.json",
+            servicesApi: "./src/public/db/services.json",
             isServiceChosen: false,
             serviceChosen: '',
 
             prices: [],
-            pricesApi: "./src/public/jsons/prices.json"
+            pricesApi: "./src/public/db/prices.json"
         };
     },
     methods: {
